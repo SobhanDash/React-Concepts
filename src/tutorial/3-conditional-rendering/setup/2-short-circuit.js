@@ -19,7 +19,7 @@ const ShortCircuit = () => {
 				Toggle Error
 			</button>
 			{isError && <h1>Error...</h1>}{" "}
-			{/*if text is true then display the right side else show the text */}
+			{/*if isError is true then display the right side else show nothing */}
 			{/* ternary operator */}
 			{isError ? (
 				<h2>There's an Error</h2>
