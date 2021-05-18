@@ -10,7 +10,8 @@ const ControlledInputs = () => {
 	// const [firstName, setFirstName] = useState('');
 	// const [email, setEmail] = useState('');
 	// const [age, setAge] = useState('');
-	const [person, setPerson] = useState({ firstName: "", email: "", age: "" })
+	const [person, setPerson] = useState({ firstName: "", email: "", age: "" })  // for the input collection
+	//for list that will be rendered on screen
 	const [people, setPeople] = useState([])
 
   //takes multiple inputs and handles them
@@ -18,15 +19,19 @@ const ControlledInputs = () => {
     const name = e.target.name
     const value = e.target.value
     // console.log(name, value) 
-    //we spread the object so if we are adding name we don't delete email or age from the list
+    //we spread the object so if we are adding name we don't delete email or age from the list.
+	// "[name]: value" helps us handle the inputs s.t we don't have to create multiple states for them
     setPerson({ ...person, [name]: value })
   }
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+	//if the fields are not empty
     if(person.firstName && person.email && person.age){
       const newPerson = {...person, id: new Date().getTime().toString()}
+	  //adds the entry to the list/object to be rendered
       setPeople([...people, newPerson]);
+	  //resets for new entry
       setPerson({ firstName:"", email:"", age:"" });
     }
 	}
