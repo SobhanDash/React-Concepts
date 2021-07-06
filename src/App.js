@@ -1,8 +1,8 @@
 import React from 'react'
-import Setup from './tutorial/6-useReducer/setup'
+import Setup from './tutorial/11-react-router/setup/index'
 function App() {
   return (
-    <div className='container'>
+    <div className="container">
       <Setup />
     </div>
   )
